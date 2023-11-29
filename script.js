@@ -43,7 +43,7 @@ function posizionaBombe(numBomba, lunghezzaArr) {
         }
         
     }
-   
+  
 }
 
 
