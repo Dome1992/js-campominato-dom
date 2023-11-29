@@ -9,30 +9,26 @@ const generaGrigliaButton = document.getElementById("generaGriglia");
 // Aggiungi un event listener per il clic sul pulsante "generaGriglia"
 generaGrigliaButton.addEventListener("click",generaGriglia )
 
-
+const lunghezzaArr = 100;
 
 // Array vuota per memorizzare le posizioni delle bombe
 const arrBombeRandom = [];
 
 
 // Funzione che genera un numero random in un range (1 ,max delle celle)
-function genRandomNunMinMax(max) {
+function genRandomNunMinMax(min,max) {
 
     // Per un numero casuale compreso tra min (incluso) e max (incluso)
-    return Math.floor(Math.random() * max ) + 1;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
     
 }
-// Utilizzo
-let newBomba = genRandomNunMinMax(1, lunghezzaArr);
 
-    
-    
 
 // Ciclo che mi popolerà l'array
  while (arrBombeRandom.length   < 16) {
         
         // generare un numero random in un range (min,max)
-        let newBomba = genRandomNunMinMax(lunghezzaArr);
+        let newBomba = genRandomNunMinMax(1,lunghezzaArr);
 
         // SE il numero generato non è presente nell'array
         if (!arrBombeRandom.includes(newBomba)) {
@@ -44,9 +40,6 @@ let newBomba = genRandomNunMinMax(1, lunghezzaArr);
         
 }
   
-
-
-
 
 
 
