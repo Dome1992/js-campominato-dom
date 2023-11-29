@@ -15,16 +15,16 @@ generaGrigliaButton.addEventListener("click",generaGriglia )
 const arrBombeRandom = [];
 
 
-// Funzione che genera un numero random in un range (min,max)
-function genRandomNunMinMax(min,max) {
+// Funzione che genera un numero random in un range (1 ,max delle celle)
+function genRandomNunMinMax(max) {
 
     // Per un numero casuale compreso tra min (incluso) e max (incluso)
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * max ) + 1;
     
 }
 
 // Funzione per posizionare le bombe nel campo minato
-function posizionaBombe(numBombe, lunghezzaArr) {
+function posizionaBombe(numBomba, lunghezzaArr) {
     
     
 
@@ -32,7 +32,7 @@ function posizionaBombe(numBombe, lunghezzaArr) {
     while (arrBombeRandom.length < lunghezzaArr) {
         
         // generare un numero random in un range (min,max)
-        let newBomba = genRandomNunMinMax(minNum , maxNum);
+        let newBomba = genRandomNunMinMax(lunghezzaArr);
 
         // SE il numero generato non è presente nell'array
         if (!arrBombeRandom.includes(newBomba)) {
@@ -63,7 +63,7 @@ function generaGriglia() {
     arrBombeRandom.length = 0;
 
     // Numero di bombe
-    const numeroBombe = 16;
+    const numBombe = 16;
 
     // ciclo for per creare 100 celle
     for (let i = 1; i <= numeroCelle; i++) {
