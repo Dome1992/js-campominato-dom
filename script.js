@@ -22,14 +22,14 @@ function genRandomNunMinMax(max) {
     return Math.floor(Math.random() * max ) + 1;
     
 }
+// Utilizzo
+let newBomba = genRandomNunMinMax(1, lunghezzaArr);
 
-// Funzione per posizionare le bombe nel campo minato
-function posizionaBombe(numBomba, lunghezzaArr) {
     
     
 
-    // Ciclo che mi popolerà l'array
-    while (arrBombeRandom.length < lunghezzaArr) {
+// Ciclo che mi popolerà l'array
+ while (arrBombeRandom.length   < 16) {
         
         // generare un numero random in un range (min,max)
         let newBomba = genRandomNunMinMax(lunghezzaArr);
@@ -42,9 +42,9 @@ function posizionaBombe(numBomba, lunghezzaArr) {
             
         }
         
-    }
-  
 }
+  
+
 
 
 
